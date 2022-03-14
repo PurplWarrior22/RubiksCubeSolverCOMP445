@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/Documents/ScalaProjects/Exam1COMP443" value="PREVIEW" />
+        <entry key="$USER_HOME$/Documents/ScalaProjects/Exam2ProgrammingLanguages" value="PREVIEW" />
+        <entry key="$USER_HOME$/Documents/ScalaProjects/Homework2" value="PREVIEW" />
+        <entry key="$USER_HOME$/Documents/ScalaProjects/LoggingTraits" value="PREVIEW" />
+        <entry key="$USER_HOME$/Documents/ScalaProjects/Project1" value="PREVIEW" />
+        <entry key="$USER_HOME$/Documents/ScalaProjects/Project2" value="PREVIEW" />
+        <entry key="$USER_HOME$/Documents/ScalaProjects/QuizOne" value="PREVIEW" />
+        <entry key="$USER_HOME$/Documents/ScalaProjects/QuizTwo" value="PREVIEW" />
+        <entry key="$USER_HOME$/Documents/ScalaProjects/classExamples" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ScalaSbtSettings">
+    <option name="customVMPath" />
+  </component>
+</project>
