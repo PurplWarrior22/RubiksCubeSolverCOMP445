@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ProjectRootManager" version="2" project-jdk-name="14" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
   <component name="SbtLocalSettings">
     <option name="projectSyncType">
       <map>
-        <entry key="$USER_HOME$/Documents/ScalaProjects/Exam1COMP443" value="PREVIEW" />
-        <entry key="$USER_HOME$/Documents/ScalaProjects/Exam2ProgrammingLanguages" value="PREVIEW" />
-        <entry key="$USER_HOME$/Documents/ScalaProjects/Homework2" value="PREVIEW" />
-        <entry key="$USER_HOME$/Documents/ScalaProjects/LoggingTraits" value="PREVIEW" />
-        <entry key="$USER_HOME$/Documents/ScalaProjects/Project1" value="PREVIEW" />
-        <entry key="$USER_HOME$/Documents/ScalaProjects/Project2" value="PREVIEW" />
-        <entry key="$USER_HOME$/Documents/ScalaProjects/QuizOne" value="PREVIEW" />
-        <entry key="$USER_HOME$/Documents/ScalaProjects/QuizTwo" value="PREVIEW" />
-        <entry key="$USER_HOME$/Documents/ScalaProjects/classExamples" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../ScalaProjects/Exam1COMP443" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../ScalaProjects/Exam2ProgrammingLanguages" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../ScalaProjects/Homework2" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../ScalaProjects/LoggingTraits" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../ScalaProjects/Project1" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../ScalaProjects/Project2" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../ScalaProjects/QuizOne" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../ScalaProjects/QuizTwo" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../ScalaProjects/classExamples" value="PREVIEW" />
       </map>
     </option>
   </component>

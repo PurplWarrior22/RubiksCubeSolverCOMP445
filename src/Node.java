@@ -1,11 +1,9 @@
 
 public class Node {
-	String color; 
-	int location; 
+	String color;
 	
-	public Node(String color, int location) { 
-		this.color = color; 
-		this.location = location; 
+	public Node(String color) {
+		this.color = color;
 	}
 	
 	
