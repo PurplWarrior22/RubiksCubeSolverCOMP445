@@ -12,4 +12,19 @@ public class Cube{
             }
         }
     }
+    
+
+    public nodeColor() { 
+    	
+    }
+    
+    public goalCube() { 
+    	
+    }
+    
+    public cubeScramble() { 
+    	
+    }  
+     
+    
 }
