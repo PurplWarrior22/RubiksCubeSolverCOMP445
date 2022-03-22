@@ -1,5 +1,6 @@
 public class Cube{
     int[][][] colorNodes;
+    String[][][] goalCube;
 
     public Cube(){
         int counter = 1;
