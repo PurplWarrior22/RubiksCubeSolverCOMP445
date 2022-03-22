@@ -1,12 +1,12 @@
 public class Cube{
-    int[][][] colorNodes;
+    Node[][][] colorNodes;
 
     public Cube(){
         int counter = 1;
-        for(i = 0; i < 3; i++){
-            for(j = 0; j < 3; j++){
-                for(k = 0; k<3; k++){
-                    this.colorNodes[i][j][k] = new Node(counter);
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                for(int k = 0; k<3; k++){
+                	this.colorNodes[i][j][k] = new Node("");
                     counter++;
                 }
             }
@@ -14,15 +14,17 @@ public class Cube{
     }
     
 
-    public nodeColor() { 
+    public void nodeColor() { 
     	
     }
     
-    public goalCube() { 
-    	
+    public void goalCube() { 
+    	for(int i = 0; i < 3; i++) { 
+    		
+    	}
     }
     
-    public cubeScramble() { 
+    public void cubeScramble() { 
     	
     }  
      
