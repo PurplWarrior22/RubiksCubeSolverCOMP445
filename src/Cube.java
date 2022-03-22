@@ -192,6 +192,7 @@ public class Cube{
             default:
                 System.out.print("Error: invalid face specified.")
                 break;
+                return neighbor;
         }
 
     }
