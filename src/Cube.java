@@ -1,15 +1,20 @@
 public class Cube{
-    Node[][][] goalCube;
-    Node[][][] colorNodes;
+    Node[][] frontFace;
+    Node[][] backFace;
+    Node[][] rightFace;
+    Node[][] leftFace;
+    Node[][] upFace;
+    Node[][] downFace;
 
     public Cube(){
-        int counter = 1;
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
-                for(int k = 0; k<3; k++){
-                	this.colorNodes[i][j][k] = new Node("");
-                    counter++;
-                }
+                frontFace[i][j] = new Node("f");
+                backFace[i][j] = new Node("b");
+                rightFace[i][j] = new Node("r");
+                leftFace[i][j] = new Node("l");
+                upFace[i][j] = new Node("u");
+                downFace[i][j] = new Node("d");
             }
         }
     }
