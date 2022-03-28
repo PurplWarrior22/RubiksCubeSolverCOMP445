@@ -4,19 +4,30 @@ import java.util.Queue;
 public class Solver {
 
 		private solvingCube;
+		private moves = {"U", "D", "L", "R", "F", "B", "U'", "D'", "L'", "R'", "F'", "B'", "LM", "RM", "UM", "DM"}
 
 		public Solver(Cube cb) { 
 			solvingCube = cb;
 		}
 		
-		public void BFS(Cube cb) { 
+		public void BFS(Cube cb) {
 			boolean visited[] = new boolean[18]; 
 			Queue<Cube> q = new LinkedList<>(); 
-			Cube currentCube = new Cube();
+			Cube currentCube = null;
 			q.add(cb);
 			
-			while(!q.isEmpty() && !isGoal(cb)) { 
-				currentCube = q.remove(); 
+			while(!q.isEmpty()) {
+				currentCube = q.remove();
+				if (isGoal(currentCube)) {
+					int totalMoves = currentCube.getNumMoves();
+					System.out.println("A goal state was found in " + totalMoves + " moves!");
+					break;
+				}
+				for (String move:moves) {
+					nextCube = currentCube.move(move);
+					nextCube.setNumMoves(currentCube.getNumMoves() + 1);
+					q.add(nextCube);
+				}
 			}
 
 			System.out.println("Found goal!");

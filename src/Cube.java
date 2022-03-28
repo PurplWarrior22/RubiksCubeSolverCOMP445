@@ -9,6 +9,16 @@ public class Cube{
     Node[][] upFace;
     Node[][] downFace;
 
+    int numMoves = 0;
+
+    public int getNumMoves(){
+    	return numMoves;
+	}
+
+	public void setNumMoves(int num){
+    	numMoves = num;
+	}
+
     public Cube(){
     	frontFace = new Node[3][3]; 
     	backFace = new Node[3][3]; 
