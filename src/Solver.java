@@ -3,19 +3,23 @@ import java.util.Queue;
 
 public class Solver {
 
+		private solvingCube;
+
 		public Solver(Cube cb) { 
-			
+			solvingCube = cb;
 		}
 		
 		public void BFS(Cube cb) { 
 			boolean visited[] = new boolean[18]; 
 			Queue<Cube> q = new LinkedList<>(); 
 			Cube currentCube = new Cube();
-			q.add(cb); 
+			q.add(cb);
 			
 			while(!q.isEmpty() && !isGoal(cb)) { 
 				currentCube = q.remove(); 
 			}
+
+			System.out.println("Found goal!");
 			
 		}
 		
