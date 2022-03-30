@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Cube{
-    Node[][] frontFace;
+	Node[][] frontFace;
     Node[][] backFace;
     Node[][] rightFace;
     Node[][] leftFace;
     Node[][] upFace;
     Node[][] downFace;
-
+ 
     int numMoves = 0;
 
     public Cube(){
