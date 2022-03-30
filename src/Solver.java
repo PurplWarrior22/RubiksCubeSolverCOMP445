@@ -24,7 +24,7 @@ public class Solver {
 					break;
 				}
 				for (String move : moves) {
-					Cube nextCube = currentCube;
+					Cube nextCube = new Cube(currentCube);
 					nextCube.move(move);
 					nextCube.setNumMoves(currentCube.getNumMoves() + 1);
 					q.add(nextCube);
