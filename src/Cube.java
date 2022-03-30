@@ -479,462 +479,70 @@ public class Cube {
 		}
 
 		if (moveName.equals("U1")) {
-			Node[] front = new Node[3];
-			Node[] right = new Node[3];
-			Node[] back = new Node[3];
-			Node[] left = new Node[3];
-
-			for (int i = 0; i < 3; i++) {
-				front[i] = new Node(frontFace[0][i].getColor());
-				right[i] = new Node(rightFace[0][i].getColor());
-				back[i] = new Node(backFace[0][i].getColor());
-				left[i] = new Node(leftFace[0][i].getColor());
-
-				frontFace[0][i].color = left[i].color;
-				rightFace[0][i].color = front[i].color;
-				backFace[0][i].color = right[i].color;
-				leftFace[0][i].color = back[i].color;
-			}
-
-			Node up00 = new Node(upFace[0][0].color);
-			Node up01 = new Node(upFace[0][1].color);
-			Node up02 = new Node(upFace[0][2].color);
-			Node up12 = new Node(upFace[1][2].color);
-			Node up22 = new Node(upFace[2][2].color);
-			Node up21 = new Node(upFace[2][1].color);
-			Node up20 = new Node(upFace[2][0].color);
-			Node up10 = new Node(upFace[1][0].color);
-
-			upFace[0][0].color = up02.color;
-			upFace[0][1].color = up12.color;
-			upFace[0][2].color = up22.color;
-			upFace[1][2].color = up21.color;
-			upFace[2][2].color = up20.color;
-			upFace[2][1].color = up10.color;
-			upFace[2][0].color = up00.color;
-			upFace[1][0].color = up01.color;
+			move("U"); 
+			move("U"); 
+			move("U");
 		}
 
 		if (moveName.equals("R1")) {
-			Node[] front = new Node[3];
-			Node[] up = new Node[3];
-			Node[] back = new Node[3];
-			Node[] down = new Node[3];
-
-			for (int i = 0; i < 3; i++) {
-				front[i] = new Node(frontFace[i][2].getColor());
-				up[i] = new Node(upFace[i][2].getColor());
-				back[i] = new Node(backFace[i][2].getColor());
-				down[i] = new Node(downFace[i][2].getColor());
-
-				upFace[i][2].color = front[i].color;
-				backFace[i][2].color = up[i].color;
-				downFace[i][2].color = back[i].color;
-				frontFace[i][2].color = down[i].color;
-			}
-
-			Node right00 = new Node(rightFace[0][0].color);
-			Node right01 = new Node(rightFace[0][1].color);
-			Node right02 = new Node(rightFace[0][2].color);
-			Node right12 = new Node(rightFace[1][2].color);
-			Node right22 = new Node(rightFace[2][2].color);
-			Node right21 = new Node(rightFace[2][1].color);
-			Node right20 = new Node(rightFace[2][0].color);
-			Node right10 = new Node(rightFace[1][0].color);
-
-			rightFace[0][0].color = right02.color;
-			rightFace[0][1].color = right12.color;
-			rightFace[0][2].color = right22.color;
-			rightFace[1][2].color = right21.color;
-			rightFace[2][2].color = right20.color;
-			rightFace[2][1].color = right10.color;
-			rightFace[2][0].color = right00.color;
-			rightFace[1][0].color = right01.color;
+			move("R"); 
+			move("R"); 
+			move("R");
 		}
 
 		if (moveName.equals("F1")) {
-			Node[] left = new Node[3];
-			Node[] up = new Node[3];
-			Node[] right = new Node[3];
-			Node[] down = new Node[3];
-
-			for (int i = 0; i < 3; i++) {
-				left[i] = new Node(leftFace[i][2].getColor());
-				up[i] = new Node(upFace[2][i].getColor());
-				right[i] = new Node(rightFace[i][0].getColor());
-				down[i] = new Node(downFace[0][i].getColor());
-
-				upFace[2][i].color = right[i].color;
-				rightFace[i][0].color = down[i].color;
-				downFace[0][i].color = left[i].color;
-				leftFace[i][2].color = up[i].color;
-			}
-
-			Node front00 = new Node(frontFace[0][0].color);
-			Node front01 = new Node(frontFace[0][1].color);
-			Node front02 = new Node(frontFace[0][2].color);
-			Node front12 = new Node(frontFace[1][2].color);
-			Node front22 = new Node(frontFace[2][2].color);
-			Node front21 = new Node(frontFace[2][1].color);
-			Node front20 = new Node(frontFace[2][0].color);
-			Node front10 = new Node(frontFace[1][0].color);
-
-			frontFace[0][0].color = front02.color;
-			frontFace[0][1].color = front12.color;
-			frontFace[0][2].color = front22.color;
-			frontFace[1][2].color = front21.color;
-			frontFace[2][2].color = front20.color;
-			frontFace[2][1].color = front10.color;
-			frontFace[2][0].color = front00.color;
-			frontFace[1][0].color = front01.color;
+			move("F"); 
+			move("F"); 
+			move("F");
 		}
 
 		if (moveName.equals("D1")) {
-			Node[] front = new Node[3];
-			Node[] left = new Node[3];
-			Node[] back = new Node[3];
-			Node[] right = new Node[3];
-
-			for (int i = 0; i < 3; i++) {
-				front[i] = new Node(frontFace[2][i].getColor());
-				left[i] = new Node(leftFace[2][i].getColor());
-				back[i] = new Node(backFace[2][i].getColor());
-				right[i] = new Node(rightFace[2][i].getColor());
-
-				leftFace[2][i].color = front[i].color;
-				backFace[2][i].color = left[i].color;
-				rightFace[2][i].color = back[i].color;
-				frontFace[2][i].color = right[i].color;
-			}
-
-			Node down00 = new Node(downFace[0][0].color);
-			Node down01 = new Node(downFace[0][1].color);
-			Node down02 = new Node(downFace[0][2].color);
-			Node down12 = new Node(downFace[1][2].color);
-			Node down22 = new Node(downFace[2][2].color);
-			Node down21 = new Node(downFace[2][1].color);
-			Node down20 = new Node(downFace[2][0].color);
-			Node down10 = new Node(downFace[1][0].color);
-
-			downFace[0][0].color = down02.color;
-			downFace[0][1].color = down12.color;
-			downFace[0][2].color = down22.color;
-			downFace[1][2].color = down21.color;
-			downFace[2][2].color = down20.color;
-			downFace[2][1].color = down10.color;
-			downFace[2][0].color = down00.color;
-			downFace[1][0].color = down01.color;
+			move("D"); 
+			move("D"); 
+			move("D");
 		}
 
 		if (moveName.equals("L1")) {
-			Node[] front = new Node[3];
-			Node[] up = new Node[3];
-			Node[] back = new Node[3];
-			Node[] down = new Node[3];
-
-			for (int i = 0; i < 3; i++) {
-				front[i] = new Node(frontFace[i][0].getColor());
-				up[i] = new Node(upFace[i][0].getColor());
-				back[i] = new Node(backFace[i][0].getColor());
-				down[i] = new Node(downFace[i][0].getColor());
-
-				frontFace[i][0].color = down[i].color;
-				upFace[i][0].color = front[i].color;
-				backFace[i][0].color = up[i].color;
-				downFace[i][0].color = back[i].color;
-			}
-
-			Node left00 = new Node(leftFace[0][0].color);
-			Node left01 = new Node(leftFace[0][1].color);
-			Node left02 = new Node(leftFace[0][2].color);
-			Node left12 = new Node(leftFace[1][2].color);
-			Node left22 = new Node(leftFace[2][2].color);
-			Node left21 = new Node(leftFace[2][1].color);
-			Node left20 = new Node(leftFace[2][0].color);
-			Node left10 = new Node(leftFace[1][0].color);
-
-			leftFace[0][0].color = left02.color;
-			leftFace[0][1].color = left12.color;
-			leftFace[0][2].color = left22.color;
-			leftFace[1][2].color = left21.color;
-			leftFace[2][2].color = left20.color;
-			leftFace[2][1].color = left10.color;
-			leftFace[2][0].color = left00.color;
-			leftFace[1][0].color = left01.color;
+			move("L"); 
+			move("L"); 
+			move("L");
 		}
 
 		if (moveName.equals("B1")) {
-			Node[] left = new Node[3];
-			Node[] up = new Node[3];
-			Node[] right = new Node[3];
-			Node[] down = new Node[3];
-
-			for (int i = 0; i < 3; i++) {
-				left[i] = new Node(leftFace[i][0].getColor());
-				up[i] = new Node(upFace[0][i].getColor());
-				right[i] = new Node(rightFace[i][2].getColor());
-				down[i] = new Node(downFace[2][i].getColor());
-
-				leftFace[i][0].color = down[i].color;
-				upFace[0][i].color = left[i].color;
-				rightFace[i][2].color = up[i].color;
-				downFace[2][i].color = right[i].color;
-			}
-
-			Node back00 = new Node(backFace[0][0].color);
-			Node back01 = new Node(backFace[0][1].color);
-			Node back02 = new Node(backFace[0][2].color);
-			Node back12 = new Node(backFace[1][2].color);
-			Node back22 = new Node(backFace[2][2].color);
-			Node back21 = new Node(backFace[2][1].color);
-			Node back20 = new Node(backFace[2][0].color);
-			Node back10 = new Node(backFace[1][0].color);
-
-			backFace[0][0].color = back02.color;
-			backFace[0][1].color = back12.color;
-			backFace[0][2].color = back22.color;
-			backFace[1][2].color = back21.color;
-			backFace[2][2].color = back20.color;
-			backFace[2][1].color = back10.color;
-			backFace[2][0].color = back00.color;
-			backFace[1][0].color = back01.color;
+			move("B"); 
+			move("B"); 
+			move("B"); 
 		}
 
 		if (moveName.equals("U2")) {
-			for (int k = 0; k < 2; k++) {
-				Node[] front = new Node[3];
-				Node[] left = new Node[3];
-				Node[] back = new Node[3];
-				Node[] right = new Node[3];
-
-				for (int i = 0; i < 3; i++) {
-					front[i] = new Node(frontFace[0][i].getColor());
-					left[i] = new Node(leftFace[0][i].getColor());
-					back[i] = new Node(backFace[0][i].getColor());
-					right[i] = new Node(rightFace[0][i].getColor());
-
-					leftFace[0][i].color = front[i].color;
-					backFace[0][i].color = left[i].color;
-					rightFace[0][i].color = back[i].color;
-					frontFace[0][i].color = right[i].color;
-				}
-
-				Node up00 = new Node(upFace[0][0].color);
-				Node up01 = new Node(upFace[0][1].color);
-				Node up02 = new Node(upFace[0][2].color);
-				Node up12 = new Node(upFace[1][2].color);
-				Node up22 = new Node(upFace[2][2].color);
-				Node up21 = new Node(upFace[2][1].color);
-				Node up20 = new Node(upFace[2][0].color);
-				Node up10 = new Node(upFace[1][0].color);
-
-				upFace[0][0].color = up20.color;
-				upFace[0][1].color = up10.color;
-				upFace[0][2].color = up00.color;
-				upFace[1][2].color = up01.color;
-				upFace[2][2].color = up02.color;
-				upFace[2][1].color = up12.color;
-				upFace[2][0].color = up22.color;
-				upFace[1][0].color = up21.color;
-			}
+			move("U");
+			move("U"); 
 		}
 
 		if (moveName.equals("R2")) {
-			for (int k = 0; k < 2; k++) {
-				Node[] front = new Node[3];
-				Node[] up = new Node[3];
-				Node[] back = new Node[3];
-				Node[] down = new Node[3];
-
-				for (int i = 0; i < 3; i++) {
-					front[i] = new Node(frontFace[i][2].getColor());
-					up[i] = new Node(upFace[i][2].getColor());
-					back[i] = new Node(backFace[i][2].getColor());
-					down[i] = new Node(downFace[i][2].getColor());
-
-					upFace[i][2].color = front[i].color;
-					backFace[i][2].color = up[i].color;
-					downFace[i][2].color = back[i].color;
-					frontFace[i][2].color = down[i].color;
-				}
-
-				Node right00 = new Node(rightFace[0][0].color);
-				Node right01 = new Node(rightFace[0][1].color);
-				Node right02 = new Node(rightFace[0][2].color);
-				Node right12 = new Node(rightFace[1][2].color);
-				Node right22 = new Node(rightFace[2][2].color);
-				Node right21 = new Node(rightFace[2][1].color);
-				Node right20 = new Node(rightFace[2][0].color);
-				Node right10 = new Node(rightFace[1][0].color);
-
-				rightFace[0][0].color = right20.color;
-				rightFace[0][1].color = right10.color;
-				rightFace[0][2].color = right00.color;
-				rightFace[1][2].color = right01.color;
-				rightFace[2][2].color = right02.color;
-				rightFace[2][1].color = right12.color;
-				rightFace[2][0].color = right22.color;
-				rightFace[1][0].color = right21.color;
-			}
+			move("R"); 
+			move("R");
 		}
 
 		if (moveName.equals("F2")) {
-			for (int k = 0; k < 2; k++) {
-				Node[] left = new Node[3];
-				Node[] up = new Node[3];
-				Node[] right = new Node[3];
-				Node[] down = new Node[3];
-
-				for (int i = 0; i < 3; i++) {
-					left[i] = new Node(leftFace[i][2].getColor());
-					up[i] = new Node(upFace[2][i].getColor());
-					right[i] = new Node(rightFace[i][0].getColor());
-					down[i] = new Node(downFace[0][i].getColor());
-
-					upFace[2][i].color = left[i].color;
-					rightFace[i][0].color = up[i].color;
-					downFace[0][i].color = right[i].color;
-					leftFace[i][2].color = down[i].color;
-				}
-
-				Node front00 = new Node(frontFace[0][0].color);
-				Node front01 = new Node(frontFace[0][1].color);
-				Node front02 = new Node(frontFace[0][2].color);
-				Node front12 = new Node(frontFace[1][2].color);
-				Node front22 = new Node(frontFace[2][2].color);
-				Node front21 = new Node(frontFace[2][1].color);
-				Node front20 = new Node(frontFace[2][0].color);
-				Node front10 = new Node(frontFace[1][0].color);
-
-				frontFace[0][0].color = front20.color;
-				frontFace[0][1].color = front10.color;
-				frontFace[0][2].color = front00.color;
-				frontFace[1][2].color = front01.color;
-				frontFace[2][2].color = front02.color;
-				frontFace[2][1].color = front12.color;
-				frontFace[2][0].color = front22.color;
-				frontFace[1][0].color = front21.color;
-			}
+			move("F"); 
+			move("F"); 
 		}
 
 		if (moveName.equals("D2")) {
-			for (int k = 0; k < 2; k++) {
-				Node[] front = new Node[3];
-				Node[] left = new Node[3];
-				Node[] back = new Node[3];
-				Node[] right = new Node[3];
-
-				for (int i = 0; i < 3; i++) {
-					front[i] = new Node(frontFace[2][i].getColor());
-					left[i] = new Node(leftFace[2][i].getColor());
-					back[i] = new Node(backFace[2][i].getColor());
-					right[i] = new Node(rightFace[2][i].getColor());
-
-					leftFace[2][i].color = back[i].color;
-					backFace[2][i].color = right[i].color;
-					rightFace[2][i].color = front[i].color;
-					frontFace[2][i].color = left[i].color;
-				}
-
-				Node down00 = new Node(downFace[0][0].color);
-				Node down01 = new Node(downFace[0][1].color);
-				Node down02 = new Node(downFace[0][2].color);
-				Node down12 = new Node(downFace[1][2].color);
-				Node down22 = new Node(downFace[2][2].color);
-				Node down21 = new Node(downFace[2][1].color);
-				Node down20 = new Node(downFace[2][0].color);
-				Node down10 = new Node(downFace[1][0].color);
-
-				downFace[0][0].color = down20.color;
-				downFace[0][1].color = down10.color;
-				downFace[0][2].color = down00.color;
-				downFace[1][2].color = down01.color;
-				downFace[2][2].color = down02.color;
-				downFace[2][1].color = down12.color;
-				downFace[2][0].color = down22.color;
-				downFace[1][0].color = down21.color;
-			}
+			move("D"); 
+			move("D"); 
 		}
 
 		if (moveName.equals("L2")) {
-			for (int k = 0; k < 2; k++) {
-				Node[] front = new Node[3];
-				Node[] up = new Node[3];
-				Node[] back = new Node[3];
-				Node[] down = new Node[3];
-
-				for (int i = 0; i < 3; i++) {
-					front[i] = new Node(frontFace[i][0].getColor());
-					up[i] = new Node(upFace[i][0].getColor());
-					back[i] = new Node(backFace[i][0].getColor());
-					down[i] = new Node(downFace[i][0].getColor());
-
-					frontFace[i][0].color = up[i].color;
-					upFace[i][0].color = back[i].color;
-					backFace[i][0].color = down[i].color;
-					downFace[i][0].color = front[i].color;
-				}
-
-				Node left00 = new Node(leftFace[0][0].color);
-				Node left01 = new Node(leftFace[0][1].color);
-				Node left02 = new Node(leftFace[0][2].color);
-				Node left12 = new Node(leftFace[1][2].color);
-				Node left22 = new Node(leftFace[2][2].color);
-				Node left21 = new Node(leftFace[2][1].color);
-				Node left20 = new Node(leftFace[2][0].color);
-				Node left10 = new Node(leftFace[1][0].color);
-
-				leftFace[0][0].color = left20.color;
-				leftFace[0][1].color = left10.color;
-				leftFace[0][2].color = left00.color;
-				leftFace[1][2].color = left01.color;
-				leftFace[2][2].color = left02.color;
-				leftFace[2][1].color = left12.color;
-				leftFace[2][0].color = left22.color;
-				leftFace[1][0].color = left21.color;
-			}
+			move("L"); 
+			move("L"); 
 		}
 
 		if (moveName.equals("B2")) {
-			for (int k = 0; k < 2; k++) {
-				Node[] left = new Node[3];
-				Node[] up = new Node[3];
-				Node[] right = new Node[3];
-				Node[] down = new Node[3];
-
-				for (int i = 0; i < 3; i++) {
-					left[i] = new Node(leftFace[i][0].getColor());
-					up[i] = new Node(upFace[0][i].getColor());
-					right[i] = new Node(rightFace[i][2].getColor());
-					down[i] = new Node(downFace[2][i].getColor());
-
-					leftFace[i][0].color = up[i].color;
-					upFace[0][i].color = right[i].color;
-					rightFace[i][2].color = down[i].color;
-					downFace[2][i].color = left[i].color;
-				}
-
-				Node back00 = new Node(backFace[0][0].color);
-				Node back01 = new Node(backFace[0][1].color);
-				Node back02 = new Node(backFace[0][2].color);
-				Node back12 = new Node(backFace[1][2].color);
-				Node back22 = new Node(backFace[2][2].color);
-				Node back21 = new Node(backFace[2][1].color);
-				Node back20 = new Node(backFace[2][0].color);
-				Node back10 = new Node(backFace[1][0].color);
-
-				backFace[0][0].color = back20.color;
-				backFace[0][1].color = back10.color;
-				backFace[0][2].color = back00.color;
-				backFace[1][2].color = back01.color;
-				backFace[2][2].color = back02.color;
-				backFace[2][1].color = back12.color;
-				backFace[2][0].color = back22.color;
-				backFace[1][0].color = back21.color;
-			}
-
-		}
-
+			move("B"); 
+			move("B"); 
+		} 
 	}
 
 	@Override
