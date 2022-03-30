@@ -498,10 +498,10 @@ public class Cube {
     	}
     }
 
-	public int compareTo(Cube compareNode)
+	public int compareTo(Cube compareCube)
 	{
-		int compareCost = ((Cube)compareNode).getNumMoves();
-		int compareHeuristic = ((Cube)compareNode).getHeuristic();
+		int compareCost = ((Cube)compareCube).getNumMoves();
+		int compareHeuristic = ((Cube)compareCube).getHeuristic();
 
 		//  For Ascending order
 		return (this.numMoves+this.heuristic) - (compareCost+compareHeuristic);

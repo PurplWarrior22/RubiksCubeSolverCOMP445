@@ -16,11 +16,11 @@ public class Solver {
 		}
 		
 		public void BFS(Cube cb) {
-			boolean visited[] = new boolean[18]; 
-			Queue<Cube> q = new LinkedList<>(); 
+			boolean visited[] = new boolean[18];
+			Queue<Cube> q = new LinkedList<>();
 			Cube currentCube = null;
 			q.add(cb);
-			
+
 			while(!q.isEmpty()) {
 				currentCube = q.remove();
 				if (isGoal(currentCube)) {
@@ -38,8 +38,27 @@ public class Solver {
 			
 		}
 		
-		public void advancedBFS(Cube cb) { 
-			
+		public void advancedBFS(Cube cb) {
+			boolean visited[] = new boolean[18];
+			Queue<Cube> q = new LinkedList<>();
+			Cube currentCube = null;
+			q.add(cb);
+
+			while(!q.isEmpty()) {
+				currentCube = q.remove();
+				if (isGoal(currentCube)) {
+					int totalMoves = currentCube.getNumMoves();
+					System.out.println("A goal state was found in " + totalMoves + " moves!");
+					break;
+				}
+				for (String move : moves) {
+					Cube nextCube = deepCopyCube(currentCube);
+					nextCube.move(move);
+					nextCube.setNumMoves(currentCube.getNumMoves() + 1);
+					q.add(nextCube);
+					q.sort((n1, n2) -> n1.compareTo(n2));
+				}
+			}
 		}
 		
 		public static boolean isGoal(Cube cb) { 
