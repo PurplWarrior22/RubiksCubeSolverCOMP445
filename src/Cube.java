@@ -497,6 +497,18 @@ public class Cube {
     		backFace[1][0].color = back21.color; 
     	}
     }
+
+	public int compareTo(Cube compareNode)
+	{
+		int compareCost = ((Cube)compareNode).getNumMoves();
+		int compareHeuristic = ((Cube)compareNode).getHeuristic();
+
+		//  For Ascending order
+		return (this.numMoves+this.heuristic) - (compareCost+compareHeuristic);
+
+		// For Descending order do like this
+		// return compareCost-this.cost;
+	}
     
     @Override
     public String toString() { 
