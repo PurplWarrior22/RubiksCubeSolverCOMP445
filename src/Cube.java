@@ -11,14 +11,6 @@ public class Cube{
 
     int numMoves = 0;
 
-    public int getNumMoves(){
-    	return numMoves;
-	}
-
-	public void setNumMoves(int num){
-    	numMoves = num;
-	}
-
     public Cube(){
     	frontFace = new Node[3][3]; 
     	backFace = new Node[3][3]; 
@@ -38,6 +30,14 @@ public class Cube{
             }
         }
     }
+
+	public int getNumMoves(){
+		return numMoves;
+	}
+
+	public void setNumMoves(int num){
+		numMoves = num;
+	}
 
     public ArrayList<Node> getNeighbors(Node node, int iPosition, int jPosition, String face){
         ArrayList <Node> neighbors = new ArrayList<>();

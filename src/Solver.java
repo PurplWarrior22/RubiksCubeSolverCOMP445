@@ -3,8 +3,8 @@ import java.util.Queue;
 
 public class Solver {
 
-		private solvingCube;
-		private moves = {"U", "D", "L", "R", "F", "B", "U'", "D'", "L'", "R'", "F'", "B'", "LM", "RM", "UM", "DM"}
+		private Cube solvingCube;
+		private String[] moves = {"U", "D", "L", "R", "F", "B", "U'", "D'", "L'", "R'", "F'", "B'", "LM", "RM", "UM", "DM"};
 
 		public Solver(Cube cb) { 
 			solvingCube = cb;
@@ -23,15 +23,13 @@ public class Solver {
 					System.out.println("A goal state was found in " + totalMoves + " moves!");
 					break;
 				}
-				for (String move:moves) {
+				for (String move : moves) {
 					Cube nextCube = currentCube;
 					nextCube.move(move);
 					nextCube.setNumMoves(currentCube.getNumMoves() + 1);
 					q.add(nextCube);
 				}
 			}
-
-			System.out.println("Found goal!");
 			
 		}
 		
