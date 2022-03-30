@@ -9,6 +9,7 @@ public class Cube {
     Node[][] downFace;
 
     int numMoves;
+    int heuristic;
 
     public Cube(){
     	frontFace = new Node[3][3]; 
@@ -29,7 +30,55 @@ public class Cube {
             }
         }
         numMoves = 0;
+        heuristic = setHeuristic();
     }
+
+    public int setHeuristic(){
+    	wrongCounter = 0;
+    	for(int i = 0; i < 3; i++){
+    		for(int j = 0; j < 3; j++){
+    			if(frontFace[i][j].getColor() != "f"){
+    				wrongCounter++;
+				}
+			}
+		}
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 3; j++){
+				if(backFace[i][j].getColor() != "b"){
+					wrongCounter++;
+				}
+			}
+		}
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 3; j++){
+				if(leftFace[i][j].getColor() != "l"){
+					wrongCounter++;
+				}
+			}
+		}
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 3; j++){
+				if(rightFace[i][j].getColor() != "r"){
+					wrongCounter++;
+				}
+			}
+		}
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 3; j++){
+				if(upFace[i][j].getColor() != "u"){
+					wrongCounter++;
+				}
+			}
+		}
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 3; j++){
+				if(downFace[i][j].getColor() != "d"){
+					wrongCounter++;
+				}
+			}
+		}
+		return wrongCounter;
+	}
 
 	public ArrayList<Node> getNeighbors(Node node, int iPosition, int jPosition, String face){
         ArrayList <Node> neighbors = new ArrayList<>();
