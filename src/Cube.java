@@ -34,7 +34,7 @@ public class Cube {
     }
 
     public int setHeuristic(){
-    	wrongCounter = 0;
+    	int wrongCounter = 0;
     	for(int i = 0; i < 3; i++){
     		for(int j = 0; j < 3; j++){
     			if(frontFace[i][j].getColor() != "f"){
@@ -556,6 +556,10 @@ public class Cube {
 		return upFace;
 	}
 
+	public int getHeuristic() {
+		return heuristic;
+	}
+
 	public void setBackFace(Node[][] backFace) {
 		this.backFace = backFace;
 	}
@@ -579,8 +583,12 @@ public class Cube {
 	public void setUpFace(Node[][] upFace) {
 		this.upFace = upFace;
 	}
-    
-    public String toStringFace(Node[][] nodes) { 
+
+	public void setHeuristic(int heuristic) {
+		this.heuristic = heuristic;
+	}
+
+	public String toStringFace(Node[][] nodes) {
     	//String returnString = face + " ";
     	String returnString = ""; 
     	for(int i = 0; i < 3; i++) { 

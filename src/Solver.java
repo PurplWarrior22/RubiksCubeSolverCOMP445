@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
 public class Solver {
 
 		private Cube solvingCube;
-		private String[] moves = {"U", "D", "L", "R", "F", "B", "U'", "D'", "L'", "R'", "F'", "B'", "LM", "RM", "UM", "DM"};
+		private String[] moves = {"U", "D", "L", "R", "F", "B"};
 
 		public Solver(Cube cb) { 
 			solvingCube = cb;
@@ -51,12 +51,14 @@ public class Solver {
 					System.out.println("A goal state was found in " + totalMoves + " moves!");
 					break;
 				}
-				for (String move : moves) {
+				for (int i = 0; i < moves.length; i++){
 					Cube nextCube = deepCopyCube(currentCube);
-					nextCube.move(move);
+					System.out.println(currentCube.toString());
+					System.out.println(nextCube.toString());
+					nextCube.move(moves[i]);
 					nextCube.setNumMoves(currentCube.getNumMoves() + 1);
 					q.add(nextCube);
-					q.sort((n1, n2) -> n1.compareTo(n2));
+					//q.sort((n1, n2) -> n1.compareTo(n2));
 				}
 			}
 		}
