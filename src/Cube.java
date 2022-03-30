@@ -30,6 +30,28 @@ public class Cube{
             }
         }
     }
+    
+    public Cube(Cube cb) { 
+    	frontFace = new Node[3][3]; 
+    	backFace = new Node[3][3]; 
+    	rightFace = new Node[3][3]; 
+    	leftFace = new Node[3][3]; 
+    	upFace = new Node[3][3]; 
+    	downFace = new Node[3][3];
+    	
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                frontFace[i][j] = new Node(cb.frontFace[i][j].getColor());
+                backFace[i][j] = new Node(cb.backFace[i][j].getColor());
+                rightFace[i][j] = new Node(cb.rightFace[i][j].getColor());
+                leftFace[i][j] = new Node(cb.leftFace[i][j].getColor());
+                upFace[i][j] = new Node(cb.upFace[i][j].getColor());
+                downFace[i][j] = new Node(cb.downFace[i][j].getColor());
+            }
+        }
+        numMoves = cb.numMoves; 
+    	
+    }
 
 	public int getNumMoves(){
 		return numMoves;
@@ -224,16 +246,17 @@ public class Cube{
     
     public void cubeScramble(int numMove) { 
     	Random rand = new Random(); 
-    	String allMoves = "URFDLB"; 
+    	// String allMoves = "URFDLB"; 
     	String moveName = ""; 
     	for(int i = 0; i < numMove; i++) { 
-    		int moveIndex = rand.nextInt(numMove + 1); 
-    		moveName = String.valueOf(allMoves.charAt(moveIndex));
+    		int moveIndex = rand.nextInt(Solver.allMoves.length); 
+    		moveName = Solver.allMoves[moveIndex];
     		move(moveName); 
     	}
     } 
     
     public void move(String moveName) { 
+    	numMoves++; 
     	if(moveName.equals("U")) { 
     		Node[] front = new Node[3]; 
     		Node[] left = new Node[3]; 
@@ -258,7 +281,7 @@ public class Cube{
     		Node up12 = new Node(upFace[1][2].color);
     		Node up22 = new Node(upFace[2][2].color);
     		Node up21 = new Node(upFace[2][1].color);
-    		Node up20 = new Node(upFace[2][2].color);
+    		Node up20 = new Node(upFace[2][0].color);
     		Node up10 = new Node(upFace[1][0].color);
     		
     		upFace[0][0].color = up20.color; 
@@ -295,7 +318,7 @@ public class Cube{
     		Node right12 = new Node(rightFace[1][2].color);
     		Node right22 = new Node(rightFace[2][2].color);
     		Node right21 = new Node(rightFace[2][1].color);
-    		Node right20 = new Node(rightFace[2][2].color);
+    		Node right20 = new Node(rightFace[2][0].color);
     		Node right10 = new Node(rightFace[1][0].color);
     		
     		rightFace[0][0].color = right20.color; 
@@ -332,7 +355,7 @@ public class Cube{
     		Node front12 = new Node(frontFace[1][2].color);
     		Node front22 = new Node(frontFace[2][2].color);
     		Node front21 = new Node(frontFace[2][1].color);
-    		Node front20 = new Node(frontFace[2][2].color);
+    		Node front20 = new Node(frontFace[2][0].color);
     		Node front10 = new Node(frontFace[1][0].color);
     		
     		frontFace[0][0].color = front20.color; 
@@ -369,7 +392,7 @@ public class Cube{
     		Node down12 = new Node(downFace[1][2].color);
     		Node down22 = new Node(downFace[2][2].color);
     		Node down21 = new Node(downFace[2][1].color);
-    		Node down20 = new Node(downFace[2][2].color);
+    		Node down20 = new Node(downFace[2][0].color);
     		Node down10 = new Node(downFace[1][0].color);
     		
     		downFace[0][0].color = down20.color; 
@@ -389,15 +412,15 @@ public class Cube{
     		Node[] down = new Node[3]; 
     		
     		for(int i = 0; i < 3; i++) { 
-    			front[i] = new Node(frontFace[0][i].getColor());
-    			up[i] = new Node(upFace[0][i].getColor());
-    			back[i] = new Node(backFace[0][i].getColor());
-    			down[i] = new Node(downFace[0][i].getColor());
+    			front[i] = new Node(frontFace[i][0].getColor());
+    			up[i] = new Node(upFace[i][0].getColor());
+    			back[i] = new Node(backFace[i][0].getColor());
+    			down[i] = new Node(downFace[i][0].getColor());
     			
-    			frontFace[0][i].color = up[i].color; 
-    			upFace[0][i].color = back[i].color; 
-    			backFace[0][i].color = down[i].color;
-    			downFace[0][i].color = front[i].color;
+    			frontFace[i][0].color = up[i].color; 
+    			upFace[i][0].color = back[i].color; 
+    			backFace[i][0].color = down[i].color;
+    			downFace[i][0].color = front[i].color;
     		}
     		
     		Node left00 = new Node(leftFace[0][0].color); 
@@ -406,7 +429,7 @@ public class Cube{
     		Node left12 = new Node(leftFace[1][2].color);
     		Node left22 = new Node(leftFace[2][2].color);
     		Node left21 = new Node(leftFace[2][1].color);
-    		Node left20 = new Node(leftFace[2][2].color);
+    		Node left20 = new Node(leftFace[2][0].color);
     		Node left10 = new Node(leftFace[1][0].color);
     		
     		leftFace[0][0].color = left20.color; 
@@ -427,14 +450,14 @@ public class Cube{
     		
     		for(int i = 0; i < 3; i++) { 
     			left[i] = new Node(leftFace[i][0].getColor());
-    			up[i] = new Node(upFace[i][0].getColor());
-    			right[i] = new Node(rightFace[i][0].getColor());
-    			down[i] = new Node(downFace[i][0].getColor());
+    			up[i] = new Node(upFace[0][i].getColor());
+    			right[i] = new Node(rightFace[i][2].getColor());
+    			down[i] = new Node(downFace[2][i].getColor());
     			
     			leftFace[i][0].color = up[i].color; 
-    			upFace[i][0].color = right[i].color; 
-    			rightFace[i][0].color = down[i].color;
-    			downFace[i][0].color = left[i].color;
+    			upFace[0][i].color = right[i].color; 
+    			rightFace[i][2].color = down[i].color;
+    			downFace[2][i].color = left[i].color;
     		}
     		
     		Node back00 = new Node(backFace[0][0].color); 
@@ -443,7 +466,7 @@ public class Cube{
     		Node back12 = new Node(backFace[1][2].color);
     		Node back22 = new Node(backFace[2][2].color);
     		Node back21 = new Node(backFace[2][1].color);
-    		Node back20 = new Node(backFace[2][2].color);
+    		Node back20 = new Node(backFace[2][0].color);
     		Node back10 = new Node(backFace[1][0].color);
     		
     		backFace[0][0].color = back20.color; 

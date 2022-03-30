@@ -2,36 +2,29 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Solver {
-
-		private Cube solvingCube;
-		private String[] moves = {"U", "D", "L", "R", "F", "B", "U'", "D'", "L'", "R'", "F'", "B'", "LM", "RM", "UM", "DM"};
-
+		public static String allMoves[] = {"R", "L", "F", "B", "U", "D"};
 		public Solver(Cube cb) { 
-			solvingCube = cb;
 		}
 		
-		public void BFS(Cube cb) {
-			boolean visited[] = new boolean[18]; 
+		public void BFS(Cube cb) { 
 			Queue<Cube> q = new LinkedList<>(); 
-			Cube currentCube = null;
-			q.add(cb);
+			Cube currentCube = new Cube(); 
+			q.add(cb); 
 			
-			while(!q.isEmpty()) {
-				currentCube = q.remove();
-				if (isGoal(currentCube)) {
-					int totalMoves = currentCube.getNumMoves();
-					System.out.println("A goal state was found in " + totalMoves + " moves!");
-					break;
+			while(!q.isEmpty() && !isGoal(cb)) {  
+			//for(int j = 0; j < 15; j++) {
+				currentCube = q.remove(); 
+				//System.out.println(currentCube.toString());
+				for(int i = 0; i < allMoves.length; i++) { 
+					Cube nextCube = new Cube(currentCube); 
+					nextCube.move(allMoves[i]);
+					q.add(nextCube); 
 				}
-				for (String move : moves) {
-					Cube nextCube = new Cube(currentCube);
-					nextCube.move(move);
-					nextCube.setNumMoves(currentCube.getNumMoves() + 1);
-					q.add(nextCube);
-				}
+				
 			}
-			
+			System.out.println("Breadth-first search " + currentCube.numMoves); 	
 		}
+		
 		
 		public void advancedBFS(Cube cb) { 
 			
@@ -48,5 +41,5 @@ public class Solver {
 				goalState = true;
 			}
 			return goalState; 
-		}
+		}	
 }
