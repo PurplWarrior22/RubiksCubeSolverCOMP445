@@ -1,5 +1,10 @@
 import java.util.LinkedList;
 import java.util.Queue;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class Solver {
 
@@ -24,7 +29,7 @@ public class Solver {
 					break;
 				}
 				for (String move : moves) {
-					Cube nextCube = new Cube(currentCube);
+					Cube nextCube = deepCopyCube(currentCube);
 					nextCube.move(move);
 					nextCube.setNumMoves(currentCube.getNumMoves() + 1);
 					q.add(nextCube);
@@ -48,5 +53,17 @@ public class Solver {
 				goalState = true;
 			}
 			return goalState; 
+		}
+
+		private static Cube deepCopyCube(Cube cube){
+			Cube newCube = new Cube();
+			newCube.setFrontFace(cube.getFrontFace());
+			newCube.setBackFace(cube.getBackFace());
+			newCube.setLeftFace(cube.getLeftFace());
+			newCube.setRightFace(cube.getRightFace());
+			newCube.setUpFace(cube.getUpFace());
+			newCube.setDownFace(cube.getDownFace());
+			newCube.setNumMoves(cube.getNumMoves());
+			return newCube;
 		}
 }

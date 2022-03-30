@@ -1,15 +1,15 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Cube{
-    Node[][] frontFace;
+public class Cube {
+	Node[][] frontFace;
     Node[][] backFace;
     Node[][] rightFace;
     Node[][] leftFace;
     Node[][] upFace;
     Node[][] downFace;
 
-    int numMoves = 0;
+    int numMoves;
 
     public Cube(){
     	frontFace = new Node[3][3]; 
@@ -29,17 +29,10 @@ public class Cube{
                 downFace[i][j] = new Node("d");
             }
         }
+        numMoves = 0;
     }
 
-	public int getNumMoves(){
-		return numMoves;
-	}
-
-	public void setNumMoves(int num){
-		numMoves = num;
-	}
-
-    public ArrayList<Node> getNeighbors(Node node, int iPosition, int jPosition, String face){
+	public ArrayList<Node> getNeighbors(Node node, int iPosition, int jPosition, String face){
         ArrayList <Node> neighbors = new ArrayList<>();
         Node[][] referenceFace;
         switch (face){
@@ -470,6 +463,62 @@ public class Cube{
     	return returnString; 
     
     }
+
+	public int getNumMoves(){
+		return numMoves;
+	}
+
+	public void setNumMoves(int num){
+		numMoves = num;
+	}
+
+	public Node[][] getBackFace() {
+		return backFace;
+	}
+
+	public Node[][] getDownFace() {
+		return downFace;
+	}
+
+	public Node[][] getFrontFace() {
+		return frontFace;
+	}
+
+	public Node[][] getLeftFace() {
+		return leftFace;
+	}
+
+	public Node[][] getRightFace() {
+		return rightFace;
+	}
+
+	public Node[][] getUpFace() {
+		return upFace;
+	}
+
+	public void setBackFace(Node[][] backFace) {
+		this.backFace = backFace;
+	}
+
+	public void setDownFace(Node[][] downFace) {
+		this.downFace = downFace;
+	}
+
+	public void setFrontFace(Node[][] frontFace) {
+		this.frontFace = frontFace;
+	}
+
+	public void setLeftFace(Node[][] leftFace) {
+		this.leftFace = leftFace;
+	}
+
+	public void setRightFace(Node[][] rightFace) {
+		this.rightFace = rightFace;
+	}
+
+	public void setUpFace(Node[][] upFace) {
+		this.upFace = upFace;
+	}
     
     public String toStringFace(Node[][] nodes) { 
     	//String returnString = face + " ";
