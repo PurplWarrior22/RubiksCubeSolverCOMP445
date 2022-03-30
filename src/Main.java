@@ -4,8 +4,9 @@ public class Main {
 		Cube testCube = new Cube();
 		Solver solver = new Solver(testCube);
 		
-		//System.out.println(testCube.toString()); 
-		
+		//testCube.move("B2");
+
+		//testCube.printCube();
 		//Cube cube1 = new Cube(); 
 		//cube1.move("R");
 		//System.out.println(cube1.toString());
@@ -13,7 +14,10 @@ public class Main {
 		//System.out.println(cube1.toString());
 		testCube.move("L");
 		testCube.move("L");
-		// testCube.cubeScramble(2);
+		//testCube.move("R");
+		//testCube.move("R");
+		//testCube.cubeScramble(2);
+		//System.out.println(testCube.toString());
 		solver.BFS(testCube);
 	}
 }
