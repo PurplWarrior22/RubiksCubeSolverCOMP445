@@ -15,7 +15,7 @@ public class Solver {
 
 		while (!q.isEmpty()) {
 			currentCube = q.remove();
-			System.out.println(currentCube.toString());
+			//System.out.println(currentCube.toString());
 			for (int i = 0; i < allMoves.length; i++) {
 				Cube nextCube = new Cube(currentCube);
 				nextCube.move(allMoves[i]);
