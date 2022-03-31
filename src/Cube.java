@@ -10,7 +10,8 @@ public class Cube {
 	Node[][] downFace;
 
 	int numMoves = 0;
-
+	int heuristic; 
+	
 	public Cube() {
 		frontFace = new Node[3][3];
 		backFace = new Node[3][3];
@@ -30,6 +31,52 @@ public class Cube {
 			}
 		}
 	}
+	   public int setHeuristic(){
+	    	int wrongCounter = 0;
+	    	for(int i = 0; i < 3; i++){
+	    		for(int j = 0; j < 3; j++){
+	    			if(frontFace[i][j].getColor() != "f"){
+	    				wrongCounter++;
+					}
+				}
+			}
+			for(int i = 0; i < 3; i++){
+				for(int j = 0; j < 3; j++){
+					if(backFace[i][j].getColor() != "b"){
+						wrongCounter++;
+					}
+				}
+			}
+			for(int i = 0; i < 3; i++){
+				for(int j = 0; j < 3; j++){
+					if(leftFace[i][j].getColor() != "l"){
+						wrongCounter++;
+					}
+				}
+			}
+			for(int i = 0; i < 3; i++){
+				for(int j = 0; j < 3; j++){
+					if(rightFace[i][j].getColor() != "r"){
+						wrongCounter++;
+					}
+				}
+			}
+			for(int i = 0; i < 3; i++){
+				for(int j = 0; j < 3; j++){
+					if(upFace[i][j].getColor() != "u"){
+						wrongCounter++;
+					}
+				}
+			}
+			for(int i = 0; i < 3; i++){
+				for(int j = 0; j < 3; j++){
+					if(downFace[i][j].getColor() != "d"){
+						wrongCounter++;
+					}
+				}
+			}
+			return wrongCounter;
+		}
 
 	public Cube(Cube cb) {
 		frontFace = new Node[3][3];
