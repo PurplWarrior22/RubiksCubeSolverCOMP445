@@ -19,5 +19,6 @@ public class Main {
 		//testCube.cubeScramble(2);
 		//System.out.println(testCube.toString());
 		solver.BFS(testCube);
+		solver.advancedBFS(testCube);
 	}
 }
