@@ -2,13 +2,24 @@
 public class Main {
 	public static void main(String[] args) {
 		Solver solver = new Solver(); 
-		// Test Cube 1 with 4 random moves away from the goal cube 
+		
+		//Test Cube 1 with 1 - 6 (safely 4) random moves away from the goal cube 
 		System.out.println("Starting cube 1:"); 
 		Cube testCube = new Cube();
+		System.out.println(testCube.toString()); 
 		testCube.cubeScramble(4);
 		System.out.println(testCube.toString()); 
+		long startTime = System.nanoTime(); 
 		solver.BFS(testCube);
-		solver.advancedBFS(testCube);
+		long endTime = System.nanoTime(); 
+		long duration = (endTime - startTime) / 100000; 
+		System.out.println(testCube.toString() + "\n BFS: " + duration + "ms"); 
+		
+		long startTime1 = System.nanoTime(); 
+		solver.aBFS(testCube);
+		long endTime1 = System.nanoTime(); 
+		long duration1 = (endTime1 - startTime1) / 100000;
+		System.out.println(testCube.toString() + "\n A: " + duration1 + "ms");
 		
 		// Test Cube 2 that is 2 Left Move away from the goal cube. 
 		// Since L2 is a move, expected result for the two search is one
@@ -18,27 +29,9 @@ public class Main {
 		testCube1.move("L");
 		System.out.println(testCube1.toString()); 
 		solver.BFS(testCube1); 
-		solver.advancedBFS(testCube1);
-		
-		
-		//Test Cube 3
+		solver.aBFS(testCube1);
+	
 
-		//Analysis Testing for up to 6 Moves
-		for(int i = 1; i <= 6; i++){
-			Cube newCube = new Cube();
-			newCube.cubeScramble(i);
-			startTime = System.currentTimeMillis();
-			solver.BFS(newCube);
-			totalTime = System.currentTimeMillis() - startTime;
-			System.out.println("Time Taken for BFS with " + i + " move(s) = " + totalTime + "milliseconds.");
-			System.out.println();
-			startTime = System.currentTimeMillis();
-			solver.advancedBFS(newCube);
-			totalTime = System.currentTimeMillis() - startTime;
-			System.out.println("Time taken for A* with " + i + " move(s) = " + totalTime + "milliseconds.");
-			System.out.println();
-		}
-		
 		
 
 	}

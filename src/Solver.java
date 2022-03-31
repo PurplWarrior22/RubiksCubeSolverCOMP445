@@ -30,7 +30,7 @@ public class Solver {
 		}	
 	}
 
-	public void advancedBFS(Cube cb) {
+	public void aBFS(Cube cb) {
 		Queue<Cube> q = new LinkedList<>();
 		Cube currentCube = new Cube();
 		q.add(cb);
