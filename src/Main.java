@@ -2,7 +2,7 @@
 public class Main {
 	public static void main(String[] args) {
 		Cube testCube = new Cube();
-		Solver solver = new Solver(testCube);
+		Solver solver = new Solver();
 		
 		//testCube.move("B2");
 
