@@ -11,8 +11,8 @@ public class Solver {
 		private Cube solvingCube;
 		private String[] moves = {"U", "D", "L", "R", "F", "B"};
 
-		public Solver(Cube cb) { 
-			solvingCube = cb;
+		public Solver() {
+
 		}
 		
 		public void BFS(Cube cb) {
