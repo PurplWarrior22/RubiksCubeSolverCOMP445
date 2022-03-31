@@ -33,7 +33,25 @@ public class Solver {
 	}
 
 	public void advancedBFS(Cube cb) {
+		Queue<Cube> q = new LinkedList<>();
+		Cube currentCube = new Cube();
+		q.add(cb);
 
+		while (!q.isEmpty()) {
+			currentCube = q.remove();
+			//System.out.println(currentCube.toString());
+			for (int i = 0; i < allMoves.length; i++) {
+				Cube nextCube = new Cube(currentCube);
+				nextCube.move(allMoves[i]);
+				nextCube.numMoves++;
+				if (isGoal(nextCube)) {
+					System.out.println("A* search " + nextCube.numMoves);
+					return;
+				}
+				q.add(nextCube);
+				Collections.sort((List)q, new sortByMoves());
+			}
+		}
 	}
 
 	public static boolean isGoal(Cube cb) {
@@ -44,5 +62,15 @@ public class Solver {
 			goalState = true;
 		}
 		return goalState;
+	}
+
+	class sortByMoves implements Comparator<Cube>
+	{
+		// Used for sorting in ascending order of
+		// roll number
+		public int compare(Cube a, Cube b)
+		{
+			return (a.numMoves + a.heuristic) - (b.numMoves + b.heuristic);
+		}
 	}
 }
