@@ -21,7 +21,23 @@ public class Main {
 		solver.advancedBFS(testCube1);
 		
 		
-		//Test Cube 3 
+		//Test Cube 3
+
+		//Analysis Testing for up to 6 Moves
+		for(int i = 1; i <= 6; i++){
+			Cube newCube = new Cube();
+			newCube.cubeScramble(i);
+			startTime = System.currentTimeMillis();
+			solver.BFS(newCube);
+			totalTime = System.currentTimeMillis() - startTime;
+			System.out.println("Time Taken for BFS with " + i + " move(s) = " + totalTime + "milliseconds.");
+			System.out.println();
+			startTime = System.currentTimeMillis();
+			solver.advancedBFS(newCube);
+			totalTime = System.currentTimeMillis() - startTime;
+			System.out.println("Time taken for A* with " + i + " move(s) = " + totalTime + "milliseconds.");
+			System.out.println();
+		}
 		
 		
 
