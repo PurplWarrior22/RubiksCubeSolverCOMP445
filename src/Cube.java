@@ -340,7 +340,7 @@ public class Cube {
 			upFace[1][0].color = up21.color;
 		}
 
-		if (moveName.equals("R")) {
+		else if (moveName.equals("R")) {
 			Node[] front = new Node[3];
 			Node[] up = new Node[3];
 			Node[] back = new Node[3];
@@ -377,7 +377,7 @@ public class Cube {
 			rightFace[1][0].color = right21.color;
 		}
 
-		if (moveName.equals("F")) {
+		else if (moveName.equals("F")) {
 			Node[] left = new Node[3];
 			Node[] up = new Node[3];
 			Node[] right = new Node[3];
@@ -414,7 +414,7 @@ public class Cube {
 			frontFace[1][0].color = front21.color;
 		}
 
-		if (moveName.equals("D")) {
+		else if (moveName.equals("D")) {
 			Node[] front = new Node[3];
 			Node[] left = new Node[3];
 			Node[] back = new Node[3];
@@ -451,7 +451,7 @@ public class Cube {
 			downFace[1][0].color = down21.color;
 		}
 
-		if (moveName.equals("L")) {
+		else if (moveName.equals("L")) {
 			Node[] front = new Node[3];
 			Node[] up = new Node[3];
 			Node[] back = new Node[3];
@@ -488,7 +488,7 @@ public class Cube {
 			leftFace[1][0].color = left21.color;
 		}
 
-		if (moveName.equals("B")) {
+		else if (moveName.equals("B")) {
 			Node[] left = new Node[3];
 			Node[] up = new Node[3];
 			Node[] right = new Node[3];
@@ -525,68 +525,68 @@ public class Cube {
 			backFace[1][0].color = back21.color;
 		}
 
-		if (moveName.equals("U1")) {
+		else if (moveName.equals("U1")) {
 			move("U"); 
 			move("U"); 
 			move("U");
 		}
 
-		if (moveName.equals("R1")) {
+		else if (moveName.equals("R1")) {
 			move("R"); 
 			move("R"); 
 			move("R");
 		}
 
-		if (moveName.equals("F1")) {
+		else if (moveName.equals("F1")) {
 			move("F"); 
 			move("F"); 
 			move("F");
 		}
 
-		if (moveName.equals("D1")) {
+		else if (moveName.equals("D1")) {
 			move("D"); 
 			move("D"); 
 			move("D");
 		}
 
-		if (moveName.equals("L1")) {
+		else if (moveName.equals("L1")) {
 			move("L"); 
 			move("L"); 
 			move("L");
 		}
 
-		if (moveName.equals("B1")) {
+		else if (moveName.equals("B1")) {
 			move("B"); 
 			move("B"); 
 			move("B"); 
 		}
 
-		if (moveName.equals("U2")) {
+		else if (moveName.equals("U2")) {
 			move("U");
 			move("U"); 
 		}
 
-		if (moveName.equals("R2")) {
+		else if (moveName.equals("R2")) {
 			move("R"); 
 			move("R");
 		}
 
-		if (moveName.equals("F2")) {
+		else if (moveName.equals("F2")) {
 			move("F"); 
 			move("F"); 
 		}
 
-		if (moveName.equals("D2")) {
+		else if (moveName.equals("D2")) {
 			move("D"); 
 			move("D"); 
 		}
 
-		if (moveName.equals("L2")) {
+		else if (moveName.equals("L2")) {
 			move("L"); 
 			move("L"); 
 		}
 
-		if (moveName.equals("B2")) {
+		else if (moveName.equals("B2")) {
 			move("B"); 
 			move("B"); 
 		} 
@@ -611,7 +611,7 @@ public class Cube {
 		String returnString = "";
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
-				returnString = returnString + (nodes[i][j]) + " ";
+				returnString = returnString + (nodes[i][j]);
 			}
 		}
 		return returnString;
